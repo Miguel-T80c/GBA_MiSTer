@@ -330,12 +330,12 @@ wire [32:0] RTC_time;
 
 wire [31:0] joy = joydb_1ena ?
 	!status[60] ? {
-		//Z X S M C Y A B U D L R
-		OSD_STATUS? 32'b000000 : {joydb_1[9],joydb_1[7],joydb_1[10],joydb_1[11]|(joydb_1[10]&joydb_1[5]),joydb_1[6],joydb_1[8],joydb_1[5:0]} 
+		//Z X S M C Y B A U D L R
+		OSD_STATUS? 32'b000000 : {joydb_1[9],joydb_1[7],joydb_1[10],joydb_1[11]|(joydb_1[10]&joydb_1[5]),joydb_1[6],joydb_1[8],joydb_1[4],joydb_1[5],joydb_1[3:0]} 
 	} :
 	{
-		//Y X S M C Z A B U D L R
-		OSD_STATUS? 32'b000000 : {joydb_1[8],joydb_1[7],joydb_1[10],joydb_1[11]|(joydb_1[10]&joydb_1[5]),joydb_1[6],joydb_1[9],joydb_1[5:0]}
+		//Y X S M C Z B A U D L R
+		OSD_STATUS? 32'b000000 : {joydb_1[8],joydb_1[7],joydb_1[10],joydb_1[11]|(joydb_1[10]&joydb_1[5]),joydb_1[6],joydb_1[9],joydb_1[4],joydb_1[5],joydb_1[3:0]}
 	} 
 : joy_USB;
 
